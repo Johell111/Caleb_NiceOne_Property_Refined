@@ -1,0 +1,59 @@
+﻿CALEB NICEONE PROPERTY — REVISION CHECKS
+
+2026-10-01
+
+Completed:
+- JavaScript syntax check: node --check assets/site.js passed.
+- Source inspection confirmed existing contact and finder field names are retained
+  by the shared script, with exact-value query preselection and encoded WhatsApp URLs.
+- No backend, dependency, personal-data storage or automatic message-send code added.
+
+Browser form verification completed with Chromium through agent-browser against
+http://127.0.0.1:4173 in an isolated niceone-functional session:
+- Rent query preselected the correct goal and displayed required annual-rent ranges.
+- Switching Rent to Buy, Buy to Rent, and Rent to management cleared the prior
+  budget choice and applied the correct required or optional state.
+- Sell and marketing budgets were optional; investment budget was required.
+- Contact interest query preselected Property management.
+- Empty contact/finder, whitespace-only name and an invalid telephone number
+  prevented popup attempts. Both Nigerian 0802 329 2798 and international
+  +234 (802) 329-2798 formats passed validation.
+- Valid contact and finder submissions trimmed surrounding name whitespace and
+  preserved ampersands, the Naira symbol and real textarea newlines in encoded text.
+- A management brief submitted successfully with its optional budget left blank.
+- Both handoff status areas provided a link matching the prepared message URL;
+  subsequent edits cleared the old handoff link and status.
+- Local storage and session storage remained empty. Browser error log was empty.
+
+All form popup attempts were intercepted by a window.open test stub installed
+before every document load. The browser allowed only 127.0.0.1 network traffic.
+No WhatsApp request or message was transmitted during these checks.
+
+Styled navigation checks completed at 360px, with a 1200px resize:
+- Closed mobile navigation was hidden; opening it revealed Find a Property and
+  synchronized aria-expanded with the Open/Close navigation label.
+- Escape closed the menu and returned focus to its button.
+- A real outside mouse click dismissed the menu.
+- Selecting a navigation link dismissed the menu. Navigation was prevented once
+  for this isolated assertion so the handler state could be observed before unload.
+- Resizing to desktop cleared mobile state and displayed desktop navigation;
+  returning to 360px retained the closed state.
+- The actual mobile Find a Property link navigated to the finder. Its initially
+  disabled submit button was enabled by the initialized form script.
+- Browser error log remained empty.
+
+Final coordinating-agent checks:
+- Static parser: all 7 pages and 227 local references passed. Each page had one
+  main element, one h1, a meta description, labelled inputs and image alternatives.
+- JavaScript syntax: node --check assets/site.js passed on the final source.
+- Responsive geometry: all 7 pages at 360, 768 and 1440px had no horizontal
+  overflow and no completed broken images; document.fonts.ready resolved.
+- Final readability rerun: all 7 pages at 360 and 1440px still had no overflow.
+- Automated axe-core 4.12.1 accessibility audits: zero violations across all
+  7 pages at 360 and 1440px. The homepage caption's final color correction was
+  additionally rechecked at 390 and 1440px with zero violations.
+- Desktop and mobile screenshot previews were saved to the temporary review
+  folder niceone-design-dnw1ke0b.rev as desktop.png and mobile.png.
+
+Accessibility evidence consists of these automated audits and the manual form
+and navigation checks above; it is not a claim of complete WCAG conformance.
